@@ -1,23 +1,24 @@
-import logo from './logo.svg';
 import './App.css';
+import Form from './components/Form';
+import TryFire from './components/TryFire';
+import YupForm from './components/YupForm';
+import UpdateExist from './components/UpdateExist';
+import { Route, Routes, useParams } from 'react-router-dom';
+import Notification from './components/Notification';
 
 function App() {
+  // const {id} = useParams()
+
+
+  
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <Notification/>
+    {/* <Notification/> */}
+    <Routes>
+      <Route path='/' element={<TryFire/>}/>
+      <Route path='/:id' element={<UpdateExist/>}/>
+    </Routes>
     </div>
   );
 }
